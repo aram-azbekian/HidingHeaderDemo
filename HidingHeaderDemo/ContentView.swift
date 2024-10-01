@@ -9,15 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingHeader: Bool = true
+    @State private var rollingWindowHeight: CGFloat = .zero
 
     var body: some View {
-        VStack {
-            if isShowingHeader {
-                HeaderView()
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                if isShowingHeader {
+                    HeaderView()
+                }
+                SomeScrollView(isShowingHeader: $isShowingHeader, rollingWindowHeight: rollingWindowHeight)
             }
-            SomeScrollView(isShowingHeader: $isShowingHeader)
+            .onAppear(perform: {
+                rollingWindowHeight = geo.size.height
+            })
         }
-        .padding()
     }
 }
 

@@ -15,6 +15,7 @@
 		24487F1F2CA9C1D400C9549F /* SomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24487F1E2CA9C1D400C9549F /* SomeScrollView.swift */; };
 		24487F212CA9D66B00C9549F /* ScrollingOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24487F202CA9D66B00C9549F /* ScrollingOffsetKey.swift */; };
 		24487F232CA9E00B00C9549F /* OffsetReadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24487F222CA9E00B00C9549F /* OffsetReadingModifier.swift */; };
+		2454B7002CAC7C1300F5DB3F /* TotalContentHeightKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454B6FF2CAC7C1300F5DB3F /* TotalContentHeightKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		24487F1E2CA9C1D400C9549F /* SomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeScrollView.swift; sourceTree = "<group>"; };
 		24487F202CA9D66B00C9549F /* ScrollingOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingOffsetKey.swift; sourceTree = "<group>"; };
 		24487F222CA9E00B00C9549F /* OffsetReadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetReadingModifier.swift; sourceTree = "<group>"; };
+		2454B6FF2CAC7C1300F5DB3F /* TotalContentHeightKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalContentHeightKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +61,11 @@
 		24487F0D2CA9C04500C9549F /* HidingHeaderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2454B6FE2CAC7BC900F5DB3F /* PreferenceKeys */,
 				24487F0E2CA9C04500C9549F /* HidingHeaderDemoApp.swift */,
 				24487F102CA9C04500C9549F /* ContentView.swift */,
 				24487F1C2CA9C09800C9549F /* HeaderView.swift */,
 				24487F1E2CA9C1D400C9549F /* SomeScrollView.swift */,
-				24487F202CA9D66B00C9549F /* ScrollingOffsetKey.swift */,
 				24487F222CA9E00B00C9549F /* OffsetReadingModifier.swift */,
 				24487F122CA9C04600C9549F /* Assets.xcassets */,
 				24487F142CA9C04600C9549F /* Preview Content */,
@@ -77,6 +79,15 @@
 				24487F152CA9C04600C9549F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2454B6FE2CAC7BC900F5DB3F /* PreferenceKeys */ = {
+			isa = PBXGroup;
+			children = (
+				24487F202CA9D66B00C9549F /* ScrollingOffsetKey.swift */,
+				2454B6FF2CAC7C1300F5DB3F /* TotalContentHeightKey.swift */,
+			);
+			path = PreferenceKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 				24487F212CA9D66B00C9549F /* ScrollingOffsetKey.swift in Sources */,
 				24487F232CA9E00B00C9549F /* OffsetReadingModifier.swift in Sources */,
 				24487F1F2CA9C1D400C9549F /* SomeScrollView.swift in Sources */,
+				2454B7002CAC7C1300F5DB3F /* TotalContentHeightKey.swift in Sources */,
 				24487F1D2CA9C09800C9549F /* HeaderView.swift in Sources */,
 				24487F0F2CA9C04500C9549F /* HidingHeaderDemoApp.swift in Sources */,
 			);

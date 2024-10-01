@@ -9,9 +9,11 @@ import SwiftUI
 
 struct SomeScrollView: View {
     @Binding var isShowingHeader: Bool
+    let rollingWindowHeight: CGFloat
 
     private let threshold: CGFloat = 20
     @State private var lastOffset: CGFloat = .zero
+    @State private var totalHeight: CGFloat = .zero
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -25,15 +27,17 @@ struct SomeScrollView: View {
             .onPreferenceChange(ScrollingOffsetKey.self, perform: { value in
                 processOffsetChange(value)
             })
+            .onPreferenceChange(TotalContentHeightKey.self, perform: { value in
+                totalHeight = value
+            })
         }
         .coordinateSpace(name: "scroll")
-        .onAppear {
-            UIScrollView.appearance().bounces = false
-        }
     }
 
     private func processOffsetChange(_ value: CGFloat) {
         print(value)
+
+        guard value >= 0 && value + rollingWindowHeight <= totalHeight else { return }
 
         let currentDifference = lastOffset - value
         guard abs(currentDifference) > threshold else { return }
@@ -50,8 +54,4 @@ struct SomeScrollView: View {
 
         lastOffset = value
     }
-}
-
-#Preview {
-    SomeScrollView(isShowingHeader: .constant(true))
 }
